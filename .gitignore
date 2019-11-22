@@ -1,5 +1,7 @@
 /__pycache__/
 stuff.py
+credentials.py
+*.txt
 *.log
 *.jpg
 *.png
