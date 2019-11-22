@@ -1,6 +1,7 @@
-from selenium import webdriver
+import os
 import time
-from credentials import username, password
+from selenium import webdriver
+from stuff import username, password
 
 #browser = webdriver.Firefox()
 #browser = webdriver.Chrome()
@@ -41,16 +42,20 @@ button=driver.find_elements_by_xpath("//*[contains(text(), 'Not Now')]")
 if len(button) > 0:
     button[0].click()
 
-import os
-time.sleep(10)
+time.sleep(2)
 button = driver.find_elements_by_css_selector('[aria-label="New Post"]')
+button[0].click()
 #button[-1].send_keys(os.getcwd()+"/example.jpg")
-time.sleep(5)
+#time.sleep(5)
 #button[0].send_keys('/home/cc/Projects/selenium-instagram-uploader/example.jpg')
-button1 = driver.find_elements_by_css_selector('[role="menuitem"]')
-button1[-1].send_keys(os.getcwd()+"/example.jpg")
+
+#button1 = driver.find_elements_by_css_selector('[role="menuitem"]')
+#button1[-1].click()
+
+
+#button1[-1].send_keys(os.getcwd()+"/example.jpg")
 #button1[-1].send_keys(r'/home/cc/Projects/selenium-instagram-uploader/example.jpg')
-b = driver.find_element_by_css_selector("input[type=\"file\"]")
+#b = driver.find_element_by_css_selector("input[type=\"file\"]")
 
 #button[0].click()
 
@@ -64,3 +69,23 @@ b = driver.find_element_by_css_selector("input[type=\"file\"]")
 #a=driver.find_elements_by_xpath("//*[contains(text(), 'Phone number, username, or email')]")
 #print(a)
 #a.
+
+os.system('autokey-run -s select_image')
+
+time.sleep(10)
+button=driver.find_elements_by_xpath("//*[contains(text(), 'Next')]")
+button[0].click()
+
+
+
+time.sleep(10)
+field = driver.find_elements_by_tag_name('textarea')[0]
+field.click()
+field.send_keys('lol :D')
+button=driver.find_elements_by_xpath("//*[contains(text(), 'Share')]")
+button[-1].click()
+
+print('Success!')
+driver.quit()
+
+#button = driver.find_elements_by_css_selector('[aria-label="New Post"]')
