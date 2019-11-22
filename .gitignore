@@ -1,0 +1,7 @@
+/__pycache__/
+credentials.py
+*.log
+*.jpg
+*.png
+*.jpeg
+*.org
