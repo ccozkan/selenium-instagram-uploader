@@ -5,6 +5,8 @@
 # This automation is suited for spacefm where ctrl-l activates the address bar and then searches image_name in that directory 
 # change according to your file manager
 
+import time
+
 image_path = '/path/to/your/image/folder/'
 image_name = '/image/name/no/need/to/file/extension'
 
