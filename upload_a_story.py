@@ -12,8 +12,6 @@ from selenium.webdriver.chrome.options import Options
 #driver = webdriver.Firefox(profile)
 #driver.set_window_size(360,640)
 
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 
 mobile_emulation = {
 
@@ -66,7 +64,6 @@ os.system('autokey-run -s select_image')
 time.sleep(5)
 
 #driver.orientation = "LANDSCAPE"
-
 #button = driver.find_elements_by_css_selector('[aria-label="Add to your story"]')
 #time.sleep(50)
 
