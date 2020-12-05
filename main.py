@@ -2,6 +2,7 @@ import os
 import time
 from selenium import webdriver
 from credentials import username, password, description_file
+from selenium.webdriver.common import action_chains
 
 
 # FIREFOX
@@ -53,7 +54,7 @@ button[0].click()
 #button1 = driver.find_elements_by_css_selector('[role="menuitem"]')
 #button1[-1].click()
 
-os.system('autokey-run -s select_image')
+# os.system('autokey-run -s select_image')
 
 time.sleep(10)
 button=driver.find_elements_by_xpath("//*[contains(text(), 'Expand')]")
@@ -75,9 +76,13 @@ field.send_keys(description)
 
 time.sleep(15)
 button=driver.find_elements_by_xpath("//*[contains(text(), 'Share')]")
-button[-1].click()
+temp = button[1]
 
+driver.execute_script("arguments[0].scrollIntoView();", temp);
+action = action_chains.ActionChains(driver)
+action.move_to_element(temp)
+action.click()
+action.perform()
 
-print('Success!')
 time.sleep(15)
 driver.quit()
